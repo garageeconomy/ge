@@ -4,7 +4,7 @@ defmodule GE.MixProject do
   def project do
     [
       app: :ge,
-      version: "0.1.3",
+      version: "0.1.4",
       elixir: "~> 1.8-dev",
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -35,7 +35,13 @@ defmodule GE.MixProject do
       {:bamboo, "~> 1.1.0"},
       {:bamboo_smtp, "~> 1.6.0"},
 
-      {:timex, "~> 3.0"}
+      {:timex, "~> 3.0"},
+
+      {:number, "~> 0.5.7"},
+      {:poison, "~> 3.1"},
+
+      {:number, "~> 0.5.7"}
+
 
     ]
   end
