@@ -10,7 +10,6 @@ defmodule GE.Auth do
   alias Ecto.Multi
 
 
-
   def list_users do
     list_users(100, 0)
   end
@@ -93,7 +92,6 @@ defmodule GE.Auth do
 
     Multi.new
     |> Multi.insert(:user, m_user().changeset(m_user().__struct__(%{}), user_attrs))
-
     |> Multi.run(:user_ident, fn %{user: user} ->
       repo().insert(m_user_ident().changeset(m_user_ident().__struct__(%{}), %{user_ident_attrs|user_id: user.id}))
     end)
@@ -189,6 +187,7 @@ defmodule GE.Auth do
 
   defp m_user_ident(), do: cv(:m_user_ident)
 
-  defp cv(param), do: Application.get_env(:ge, __MODULE__)[param]
+  def cv(param), do:
+    Application.get_env(:ge, __MODULE__)[param]
 
 end
