@@ -4,7 +4,7 @@ defmodule GE.MixProject do
   def project do
     [
       app: :ge,
-      version: "0.1.4",
+      version: "1.0.0",
       elixir: "~> 1.8-dev",
       start_permanent: Mix.env() == :prod,
       deps: deps()
