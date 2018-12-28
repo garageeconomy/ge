@@ -38,7 +38,7 @@ defmodule GE.Auth do
       ** (Ecto.NoResultsError)
 
   """
-  def get_user!(id), do: repo().get!(m_user(), id)
+  def get_user(id), do: repo().get(m_user(), id)
 
   def get_user_by_ident_hash(ident_hash) do
 

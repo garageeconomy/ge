@@ -22,7 +22,7 @@ defmodule GE.Auth.Pipeline do
   defp maybe_user(%{assigns: assigns} = conn, _params) do
 
     maybe_user = Guardian.Plug.current_resource(conn)
-
+    
     conn = %{conn | assigns: Map.put_new(assigns, :maybe_user, maybe_user)}
 
     conn
